@@ -9,13 +9,12 @@
   export let size = 'default';
   export let customIcon = 'default';
 
-  // Compute classes based on props using a single reactive statement
   $: buttonClass = [
     'button',
-    type, // 'primary', 'secondary', 'tertiary'
-    size !== 'default' ? size : '', // 'small', 'large', or ''
+    type,
+    size !== 'default' ? size : '',
     customIcon === 'icon-only' ? 'icon-only' : ''
-  ].filter(Boolean); // Remove any empty strings
+  ].filter(Boolean);
 
   // Function to render Font Awesome icons
   function renderIcon(icon) {
@@ -42,9 +41,6 @@
   // Set ariaLabel based on 'customIcon' prop
   $: ariaLabel =
     customIcon === 'icon-only' ? (label || 'Icon button') : null;
-
-  // Debugging: Log prop changes
-  $: console.log('Button Props:', { type, size, customIcon });
 </script>
 
 <button

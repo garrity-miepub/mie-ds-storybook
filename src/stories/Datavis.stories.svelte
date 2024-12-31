@@ -4,7 +4,7 @@
   import './DaavisStories.css';
 
   const { Story } = defineMeta({
-    title: 'Example/Datavis',
+    title: 'Components/Datavis',
     component: DatavisWrapper,
     tags: ['autodocs'],
     parameters: {

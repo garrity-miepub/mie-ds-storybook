@@ -9,7 +9,16 @@ const config = {
   ],
   framework: {
     name: "@storybook/svelte-vite",
-    options: {},
+    options: {
+      docs: {
+        autodocs: true,
+      },      
+    },
   },
+  staticDirs: ['../public'],
+  viteFinal: async (config, { configType }) => {
+    config.base = "/wgarrity/mie-ds-storybook-sveltestrap/";
+    return config;
+  },  
 };
 export default config;

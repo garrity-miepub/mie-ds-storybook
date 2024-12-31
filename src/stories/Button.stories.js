@@ -2,7 +2,7 @@
 import Button from './Button.svelte';
 
 export default {
-  title: 'Example/Button',
+  title: 'Components/Button',
   component: Button,
   tags: ['autodocs'],
   argTypes: {
