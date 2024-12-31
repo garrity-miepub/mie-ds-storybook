@@ -1,3 +1,4 @@
+<!-- Button.svelte -->
 <script>
   import './button.css';
 
@@ -8,32 +9,15 @@
   export let size = 'default';
   export let customIcon = 'default';
 
-  $: buttonClass = ['button'];
+  // Compute classes based on props using a single reactive statement
+  $: buttonClass = [
+    'button',
+    type, // 'primary', 'secondary', 'tertiary'
+    size !== 'default' ? size : '', // 'small', 'large', or ''
+    customIcon === 'icon-only' ? 'icon-only' : ''
+  ].filter(Boolean); // Remove any empty strings
 
-  $: {
-    if (type === 'primary') {
-      buttonClass.push('primary');
-    } else if (type === 'secondary') {
-      buttonClass.push('secondary');
-    } else if (type === 'tertiary') {
-      buttonClass.push('tertiary');
-    }
-  }
-
-  $: {
-    if (size === 'small') {
-      buttonClass.push('small');
-    } else if (size === 'large') {
-      buttonClass.push('large');
-    }
-  }
-
-  $: {
-    if (customIcon === 'icon-only') {
-      buttonClass.push('icon-only');
-    }
-  }
-
+  // Function to render Font Awesome icons
   function renderIcon(icon) {
     switch (icon) {
       case 'envelope':
@@ -55,9 +39,12 @@
     }
   }
 
-  $: ariaLabel = customIcon === 'icon-only'
-    ? (label || 'Icon button')
-    : null;
+  // Set ariaLabel based on 'customIcon' prop
+  $: ariaLabel =
+    customIcon === 'icon-only' ? (label || 'Icon button') : null;
+
+  // Debugging: Log prop changes
+  $: console.log('Button Props:', { type, size, customIcon });
 </script>
 
 <button
