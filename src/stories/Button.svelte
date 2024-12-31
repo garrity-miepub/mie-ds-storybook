@@ -1,47 +1,13 @@
-<!-- <script>
-  import './button.css';
-
-  /**
-   * @typedef {Object} Props
-   * @property {boolean} [primary] Is this the principal call to action on the page?
-   * @property {string} [backgroundColor] What background color to use
-   * @property {'small' | 'medium' | 'large'} [size] How large should the button be?
-   * @property {string} label Button contents
-   * @property {() => void} [onClick] The onclick event handler
-   */
-
-  /** @type {Props} */
-  const { primary = false, backgroundColor, size = 'medium', label, onClick } = $props();
-</script>
-
-<button
-  type="button"
-  class={['storybook-button', `storybook-button--${size}`].join(' ')}
-  class:storybook-button--primary={primary}
-  class:storybook-button--secondary={!primary}
-  style:background-color={backgroundColor}
-  onclick={onClick}
->
-  {label}
-</button> -->
-
-
 <script>
   import './button.css';
 
-  /**
-   * Similar props as the React version
-   */
-  export let type = 'primary';            // 'primary' | 'secondary' | 'tertiary'
-  export let label = 'Button';            // string
-  export let leadingIcon = 'none';        // 'none' | 'envelope' | 'lock' | 'user' | 'close'
-  export let trailingIcon = 'none';       // 'none' | 'chevronDown' | 'chevronRight' | 'download'
-  export let size = 'default';            // 'default' | 'small' | 'large'
-  export let customIcon = 'default';      // 'default' | 'icon-only'
+  export let type = 'primary';
+  export let label = 'Button';
+  export let leadingIcon = 'none';
+  export let trailingIcon = 'none';
+  export let size = 'default';
+  export let customIcon = 'default';
 
-  /**
-   * Build the button's CSS classes, mirroring the React logic
-   */
   $: buttonClass = ['button'];
 
   $: {
@@ -68,10 +34,6 @@
     }
   }
 
-  /**
-   * Render the icon markup based on the string name
-   * (requires appropriate CSS or Font Awesome setup)
-   */
   function renderIcon(icon) {
     switch (icon) {
       case 'envelope':
@@ -93,10 +55,6 @@
     }
   }
 
-  /**
-   * For icon-only buttons, set `aria-label` and `title`
-   * so screen readers (and maybe tooltips) are available
-   */
   $: ariaLabel = customIcon === 'icon-only'
     ? (label || 'Icon button')
     : null;
