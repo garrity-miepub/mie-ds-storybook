@@ -1,0 +1,61 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DataVis</title>
+</head>
+<body>
+  <div id="grid" class="datavis-grid"></div>
+  <script src="../../node_modules/jquery/src/jquery.js"></script>
+  <script>
+    window.jQuery = jQuery;
+    window.$ = jQuery;
+  </script>
+  <script src="../../node_modules/datavis-example/test.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DataVis</title>
+  <!-- Include any necessary stylesheets here -->
+  <!-- <link rel="stylesheet" href="/path/to/datavis/styles.css" /> -->
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+    #grid {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="grid" class="datavis-grid"></div>
+
+  <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    window.jQuery = window.$ = jQuery;
+  </script>
+
+  <!-- Configure jQuery for dynamic data path -->
+  <script>
+    window.jQuery.ajaxSetup({
+      beforeSend: function (xhr, settings) {
+        if (settings.url === 'fruit.csv') {
+          settings.url = '/fruit.csv'; // Adjust the path if necessary
+        }
+      },
+    });
+  </script>
+
+  <!-- Include DataVis and test.js -->
+  <script src="../../node_modules/datavis-example/test.js"></script>
+</body>
+</html>

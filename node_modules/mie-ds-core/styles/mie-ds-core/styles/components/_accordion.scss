@@ -1,0 +1,61 @@
+.ds-accordion, %ds-accordion{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    button, %ds-accordion-button{
+        @include flex-layout--start-center;
+        @include display-3;
+        justify-content: space-between;
+        background: var(--bg-base-lighter);
+        width: 100%;
+        border: none;
+        border-radius: var(--border-radius-md);
+        padding: var(--p-16);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover{
+            background-color: var(--bg-base-light);
+        }
+    }
+
+    .fas.fa-chevron-down, .fas.fa-chevron-up {
+        @include display-4;
+        transition: transform 0.3s ease;
+        transform: rotate(0deg);
+    }
+
+    .content{
+        max-height: 0;
+        overflow: hidden;
+        @include display-4;
+        text-align: start;;
+        transition: max-height 0.3s ease-out;
+
+        &.open{
+            max-height: fit-content;
+            margin: 16px 20px 20px 20px;
+        }
+    }
+
+    &.condensed{
+
+        button{
+            padding: var(--p-8);
+            @include display-4;
+
+            [class*="fas"]{
+                font-size: 12px;
+            }
+        }
+
+        .content{
+            @include display-5;
+            
+            &.open{
+                margin: 12px 8px 12px 12px;
+            }
+        }
+    }
+}
