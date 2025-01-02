@@ -1,7 +1,7 @@
 <script module>
   import { defineMeta } from '@storybook/addon-svelte-csf';
   import DatavisWrapper from './DatavisWrapper.svelte';
-  import './DaavisStories.css';
+  import './DatavisStories.css';
 
   const { Story } = defineMeta({
     title: 'Components/Datavis',
