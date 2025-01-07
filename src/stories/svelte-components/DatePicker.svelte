@@ -2,8 +2,8 @@
     import Calendar from './Calendar.svelte';
     import { tick } from 'svelte';
   
-    export let value = null; // Bindable value for the selected date (Date object)
-    export let format = 'MM/DD/YYYY'; // Formatting string for the input
+    export let value = null;
+    export let format = 'MM/DD/YYYY';
     export let includeTime = false;
   
     let showCalendar = false;

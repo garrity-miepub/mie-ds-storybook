@@ -3,10 +3,10 @@
     let menuX = 0;
     let menuY = 0;
   
-    export let items = []; // Array of menu items (text)
+    export let items = [];
   
     function openMenu(event) {
-      event.preventDefault(); // Prevent default browser context menu
+      event.preventDefault();
       isOpen = true;
       menuX = event.clientX;
       menuY = event.clientY;
@@ -22,12 +22,10 @@
       }
     }
   
-    // Close the menu when the component is unmounted
     onDestroy(() => {
       window.removeEventListener('click', handleClickOutside);
     });
   
-    // Attach the click outside listener when the component mounts
     onMount(() => {
       window.addEventListener('click', handleClickOutside);
     });
