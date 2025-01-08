@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6069",
     "build-storybook": "storybook build",
-    "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static"
+    "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static",
+    "deploy-storybook-public": "PUBLIC_URL=/mie-ds-storybook/ npm run build-storybook && gh-pages -d storybook-static -r https://github.com/garrity-miepub/mie-ds-storybook.git -b gh-pages",
+    "deploy-all": "npm run deploy-storybook-private && npm run deploy-storybook-public"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.3",

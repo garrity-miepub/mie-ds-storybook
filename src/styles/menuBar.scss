@@ -1,0 +1,114 @@
+.menubar {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 10px;
+}
+
+.menubar__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menubar__item {
+    position: relative;
+}
+
+.menubar__trigger {
+  padding: 5px 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.menubar__trigger:hover, .menubar__trigger:focus {
+  background-color: #ddd;
+}
+
+.menubar__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 5px 0;
+  z-index: 10;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menubar__dropdown-item {
+  display: block;
+}
+
+.menubar__sub-trigger{
+   display: block;
+    width: 100%;
+    padding: 5px 20px;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+}
+
+.menubar__sub-trigger:hover, .menubar__sub-trigger:focus{
+    background-color: #eee;
+}
+
+.menubar__sub-dropdown{
+  position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px 0;
+    z-index: 11;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menubar__separator {
+    border-bottom: 1px solid #ccc;
+    margin: 5px 0;
+}
+
+
+.menu-item{
+  display: block;
+  width: 100%;
+    padding: 5px 20px;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+.menu-item:hover, .menu-item:focus {
+  background-color: #eee;
+}
+
+.menu-shortcut{
+    float: right;
+    opacity: 0.6;
+}
+
+.menu-checkbox-item {
+  display: block;
+  width: 100%;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+
+.radio-group {
+  padding: 5px 0;
+}
+
+.radio-item {
+  display: block;
+  width: 100%;
+  padding: 5px 20px;
+  cursor: pointer;
+}

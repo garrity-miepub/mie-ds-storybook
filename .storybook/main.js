@@ -16,9 +16,10 @@ const config = {
     },
   },
   staticDirs: ['../public'],
-  viteFinal: async (config, { configType }) => {
-    config.base = "/wgarrity/mie-ds-storybook-sveltestrap/";
-    return config;
-  },  
+  viteFinal: async (viteConfig, { configType }) => {
+    // Set the base path dynamically based on PUBLIC_URL
+    viteConfig.base = process.env.PUBLIC_URL || "/wgarrity/mie-ds-storybook-sveltestrap/";
+    return viteConfig;
+  },
 };
 export default config;
