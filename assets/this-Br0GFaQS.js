@@ -1,1 +1,0 @@
-import{s as h,t as S,h as k,v as T,S as c}from"./props-D-11tLXy.js";function t(s,i){return s===i||(s==null?void 0:s[c])===i}function A(s={},i,a,q){return h(()=>{var f,r;return S(()=>{f=r,r=[],k(()=>{s!==a(...r)&&(i(s,...r),f&&t(a(...f),s)&&i(null,...f))})}),()=>{T(()=>{r&&t(a(...r),s)&&i(null,...r)})}}),s}export{A as b};
