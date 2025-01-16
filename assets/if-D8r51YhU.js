@@ -1,1 +1,0 @@
-import{n as E,E as p,o as c,d as i,q as u,U as I}from"./store-DKrw96s8.js";function T(o,_,b=!1){var n=o,e=null,a=null,f=I,h=b?p:0,s=!1;const v=(r,l=!0)=>{s=!0,t(l,r)},t=(r,l)=>{f!==(f=r)&&(f?(e?c(e):l&&(e=i(()=>l(n))),a&&u(a,()=>{a=null})):(a?c(a):l&&(a=i(()=>l(n))),e&&u(e,()=>{e=null})))};E(()=>{s=!1,_(v),s||t(null,null)},h)}export{T as i};
