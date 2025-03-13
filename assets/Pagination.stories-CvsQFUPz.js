@@ -1,5 +1,5 @@
 import{ar as C,as as y,a0 as T}from"./store-DIQEHCOu.js";import{p as x}from"./props-DO17Jqv7.js";import{h as S}from"./html-Dgl4xvzF.js";const d=({currentPage:e=1,totalPages:n=10,...c})=>{let a;const p=()=>{e>1&&(e-=1,s())},b=()=>{e<n&&(e+=1,s())},P=t=>{e=t,s()},k=(t,o)=>Array.from({length:o-t+1},(H,$)=>t+$),s=()=>{if(a||(a=document.getElementById("pagination")),!a)return;const t=k(1,n);a.innerHTML=`
-         <ul class="pagination">
+         <ul class="ds-pagination">
               <li class="page-item" ${e===1?"disabled":""}>
                 <button class="page-link" onclick="handlePrevious()" aria-label="Previous">
                    <i class="fas fa-chevron-left size-4"></i>
